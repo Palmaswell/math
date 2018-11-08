@@ -1,9 +1,9 @@
 module.exports = {
   moduleFileExtensions: [ 'ts', 'js' ],
-  moduleDirectories: [ 'node_modules', 'src' ],
+  moduleDirectories: [ 'node_modules', 'src/typescript' ],
   preset: 'ts-jest',
   roots: [
-    '<rootDir>/src'
+    '<rootDir>/src/typescript'
   ],
   testEnvironment: 'node',
   transform: {

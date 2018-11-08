@@ -6,3 +6,6 @@ package-lock.json
 .yarn-metadata.json
 .DS_Store
 .vscode
+lib
+.merlin
+src/*bs.js
