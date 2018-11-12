@@ -1,10 +1,10 @@
 {
-  "name": "math",
+  "name": "applied-linear-algebra",
   "version": "1.0.0",
-  "description": "match exercises",
-  "main": "./src/index.ts",
+  "description": "Applied Linear Algebra exercises in Typescript and Reason",
+  "main": "./src/typescript/index.ts",
   "scripts": {
-    "dev": "bsb -w",
+    "dev:reason": "bsb -w -verbose",
     "dev:type": "ts-node-dev --respawn src/typescript/index.ts",
     "test": "jest --watch"
   },

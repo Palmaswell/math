@@ -3,7 +3,7 @@ module.exports = {
   moduleDirectories: [ 'node_modules', 'src/typescript' ],
   preset: 'ts-jest',
   roots: [
-    '<rootDir>/src/typescript'
+    '<rootDir>'
   ],
   testEnvironment: 'node',
   transform: {
