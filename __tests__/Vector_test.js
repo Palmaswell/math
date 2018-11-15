@@ -35,7 +35,7 @@ describe("vector_add", (function () {
                                     ]
                                   ])));
               }));
-        return Jest.test("negative floats", (function (param) {
+        return Jest.test("floats", (function (param) {
                       return Jest.Expect[/* toEqual */12](/* :: */[
                                   7.089,
                                   /* :: */[
@@ -59,33 +59,54 @@ describe("vector_add", (function () {
       }));
 
 describe("vector_substract", (function () {
-        return Jest.test("basic floats", (function (param) {
-                      return Jest.Expect[/* toEqual */12](/* :: */[
-                                  3.3,
-                                  /* :: */[
-                                    6.0,
+        Jest.test("basic floats", (function (param) {
+                return Jest.Expect[/* toEqual */12](/* :: */[
+                            3.3,
+                            /* :: */[
+                              6.0,
+                              /* :: */[
+                                -5.7,
+                                /* [] */0
+                              ]
+                            ]
+                          ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.vector_substract(undefined, /* :: */[
+                                    -2.0,
                                     /* :: */[
-                                      -5.7,
-                                      /* [] */0
+                                      3.0,
+                                      /* :: */[
+                                        0.0,
+                                        /* [] */0
+                                      ]
                                     ]
+                                  ], /* :: */[
+                                    -5.3,
+                                    /* :: */[
+                                      -3.0,
+                                      /* :: */[
+                                        5.7,
+                                        /* [] */0
+                                      ]
+                                    ]
+                                  ])));
+              }));
+        return Jest.test("floats", (function (param) {
+                      return Jest.Expect[/* toEqual */12](/* :: */[
+                                  15.342,
+                                  /* :: */[
+                                    7.337,
+                                    /* [] */0
                                   ]
                                 ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.vector_substract(undefined, /* :: */[
-                                          -2.0,
+                                          7.119,
                                           /* :: */[
-                                            3.0,
-                                            /* :: */[
-                                              0.0,
-                                              /* [] */0
-                                            ]
+                                            8.215,
+                                            /* [] */0
                                           ]
                                         ], /* :: */[
-                                          -5.3,
+                                          -8.223,
                                           /* :: */[
-                                            -3.0,
-                                            /* :: */[
-                                              5.7,
-                                              /* [] */0
-                                            ]
+                                            0.878,
+                                            /* [] */0
                                           ]
                                         ])));
                     }));

@@ -1,24 +1,12 @@
-export interface VectorProps {
-    coordinates: number[];
-    minus(coord: number[]): number[];
-    plus(coord: number[]): number[];
-    scalar(n: number): number[];
-}
 
-// number[] -> number[]
-export const Vector = (arr: number[]): VectorProps => {
-    return {
-        coordinates: arr,
-        minus(coord): number[] {
-            return this.coordinates.map((n: number, i: number) => n - coord[i]);
-        },
-        plus(coord: number[]): number[] { 
-            return this.coordinates.map((n: number, i: number) => n + coord[i]);
-        },
-        scalar(multiplier: number): number[] {
-            return this.coordinates.map((n: number) => multiplier * n);
-        }
-    }
-}
+export const Vector = {
+    add(v1: number[], v2: number[]): number[] {
+        return v1.map((coord, i) => coord + v2[i])
+    },
+    substract(v1: number[], v2: number[]): number[] {
+        return v1.map((coord, i) => coord - v2[i])
+    },
+};
+
 
 export default Vector;
