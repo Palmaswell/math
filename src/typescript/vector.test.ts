@@ -10,3 +10,7 @@ test('Substraction', () => {
     expect(Vector.substract([-2.0, 3.0, 0.0], [-5.3, -3.0, 5.7])).toEqual([3.3, 6.0, -5.7]);
     expect(Vector.substract([7.119, 8.215], [-8.223, 0.878])).toEqual([15.342, 7.337]);
 })
+
+test('Scalar multiplication', () => {
+    expect(Vector.scalar(7.41, [1.671, -1.012, -0.318])).toEqual([12.38211, -7.49892, -2.35638]);
+})

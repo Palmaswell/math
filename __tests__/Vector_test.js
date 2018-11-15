@@ -112,6 +112,30 @@ describe("vector_substract", (function () {
                     }));
       }));
 
+describe("vector_scale", (function () {
+        return Jest.test("floats", (function (param) {
+                      return Jest.Expect[/* toEqual */12](/* :: */[
+                                  12.38211,
+                                  /* :: */[
+                                    -7.49892,
+                                    /* :: */[
+                                      -2.35638,
+                                      /* [] */0
+                                    ]
+                                  ]
+                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.vector_scale(undefined, 7.41, /* :: */[
+                                          1.671,
+                                          /* :: */[
+                                            -1.012,
+                                            /* :: */[
+                                              -0.318,
+                                              /* [] */0
+                                            ]
+                                          ]
+                                        ])));
+                    }));
+      }));
+
 describe("add_one", (function () {
         return Jest.test("basic", (function (param) {
                       return Jest.Expect[/* toEqual */12](/* :: */[
