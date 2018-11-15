@@ -6,7 +6,7 @@
   "scripts": {
     "dev:reason": "bsb -w -verbose",
     "dev:type": "ts-node-dev --respawn src/typescript/index.ts",
-    "test": "jest --watch"
+    "test": "jest --watchAll"
   },
   "author": "Mauricio Palma <mauricio.palma@woodlikeocean.com>",
   "license": "MIT",
