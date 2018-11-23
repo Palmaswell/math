@@ -1,1 +1,1 @@
-import Vector from './vector';
+export * from './vector';

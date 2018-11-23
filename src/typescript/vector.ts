@@ -1,18 +1,15 @@
 
-export const Vector = {
-    // (number[], number[]) = number[]
-    add(v1: number[], v2: number[]): number[] {
-        return v1.map((coord, i) => coord + v2[i])
-    },
-    // (number[], number[]) = number[]
-    substract(v1: number[], v2: number[]): number[] {
-        return v1.map((coord, i) => coord - v2[i])
-    },
-    // (number, number[]) = number[]
-    scalar(n: number, v: number[]): number[] {
-        return v.map(coord => coord * n);
-    }
-};
 
+// (number[], number[]) = number[]
+export const add = (v1: number[], v2: number[]): number[] => (
+  v1.map((coord: number, i: number) => coord + v2[i])
+);
 
-export default Vector;
+// (number[], number[]) = number[]
+export const substract = (v1: number[], v2: number[]): number[] => (
+  v1.map((coord: number, i: number) => coord - v2[i])
+);
+
+// (number[], number[]) = number[]
+export const scalar = (n: number, v1: number[]) => v1.map((coord: number) => coord * n)
+

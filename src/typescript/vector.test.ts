@@ -1,4 +1,4 @@
-import Vector from './vector';
+import * as Vector from './vector';
 
 
 test('Addition', () => {
