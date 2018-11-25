@@ -18,7 +18,7 @@ describe("vector_scale", () => {
     test("floats", () => expect(vector_scale(7.41, [1.671, -1.012, -0.318])) |> toEqual([12.38211, -7.49892, -2.35638]));
 });
 
-
 describe("add_one", () => {
     test("basic", () => expect(add_one([1, 2, 3])) |> toEqual([2, 3, 4]));
-})
+});
+
