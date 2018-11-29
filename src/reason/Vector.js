@@ -3,55 +3,43 @@
 
 var List = require("bs-platform/lib/js/list.js");
 
-function vector_add($staropt$star, v1, v2) {
+function add($staropt$star, v1, v2) {
   var i = $staropt$star !== undefined ? $staropt$star : 0;
   if (v1) {
     return /* :: */[
             v1[0] + List.nth(v2, i),
-            vector_add(i + 1 | 0, v1[1], v2)
+            add(i + 1 | 0, v1[1], v2)
           ];
   } else {
     return /* [] */0;
   }
 }
 
-function vector_substract($staropt$star, v1, v2) {
+function substract($staropt$star, v1, v2) {
   var i = $staropt$star !== undefined ? $staropt$star : 0;
   if (v1) {
     return /* :: */[
             v1[0] - List.nth(v2, i),
-            vector_substract(i + 1 | 0, v1[1], v2)
+            substract(i + 1 | 0, v1[1], v2)
           ];
   } else {
     return /* [] */0;
   }
 }
 
-function vector_scale($staropt$star, n, v) {
+function scale($staropt$star, n, v) {
   var i = $staropt$star !== undefined ? $staropt$star : 0;
   if (v) {
     return /* :: */[
             v[0] * n,
-            vector_scale(i + 1 | 0, n, v[1])
+            scale(i + 1 | 0, n, v[1])
           ];
   } else {
     return /* [] */0;
   }
 }
 
-function add_one(l) {
-  if (l) {
-    return /* :: */[
-            l[0] + 1 | 0,
-            add_one(l[1])
-          ];
-  } else {
-    return /* [] */0;
-  }
-}
-
-exports.vector_add = vector_add;
-exports.vector_substract = vector_substract;
-exports.vector_scale = vector_scale;
-exports.add_one = add_one;
+exports.add = add;
+exports.substract = substract;
+exports.scale = scale;
 /* No side effect */

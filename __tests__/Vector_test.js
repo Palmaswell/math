@@ -4,7 +4,7 @@
 var Jest = require("@glennsl/bs-jest/src/jest.js");
 var Vector$AppliedLinearAlgebra = require("../src/reason/Vector.js");
 
-describe("vector_add", (function () {
+describe("add", (function () {
         Jest.test("basic floats", (function (param) {
                 return Jest.Expect[/* toEqual */12](/* :: */[
                             5.9,
@@ -15,7 +15,7 @@ describe("vector_add", (function () {
                                 /* [] */0
                               ]
                             ]
-                          ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.vector_add(undefined, /* :: */[
+                          ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.add(undefined, /* :: */[
                                     2.2,
                                     /* :: */[
                                       4.3,
@@ -42,7 +42,7 @@ describe("vector_add", (function () {
                                     -7.229999999999999,
                                     /* [] */0
                                   ]
-                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.vector_add(undefined, /* :: */[
+                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.add(undefined, /* :: */[
                                           8.218,
                                           /* :: */[
                                             -9.341,
@@ -58,7 +58,7 @@ describe("vector_add", (function () {
                     }));
       }));
 
-describe("vector_substract", (function () {
+describe("substract", (function () {
         Jest.test("basic floats", (function (param) {
                 return Jest.Expect[/* toEqual */12](/* :: */[
                             3.3,
@@ -69,7 +69,7 @@ describe("vector_substract", (function () {
                                 /* [] */0
                               ]
                             ]
-                          ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.vector_substract(undefined, /* :: */[
+                          ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.substract(undefined, /* :: */[
                                     -2.0,
                                     /* :: */[
                                       3.0,
@@ -96,7 +96,7 @@ describe("vector_substract", (function () {
                                     7.337,
                                     /* [] */0
                                   ]
-                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.vector_substract(undefined, /* :: */[
+                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.substract(undefined, /* :: */[
                                           7.119,
                                           /* :: */[
                                             8.215,
@@ -112,7 +112,7 @@ describe("vector_substract", (function () {
                     }));
       }));
 
-describe("vector_scale", (function () {
+describe("scale", (function () {
         return Jest.test("floats", (function (param) {
                       return Jest.Expect[/* toEqual */12](/* :: */[
                                   12.38211,
@@ -123,36 +123,12 @@ describe("vector_scale", (function () {
                                       /* [] */0
                                     ]
                                   ]
-                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.vector_scale(undefined, 7.41, /* :: */[
+                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.scale(undefined, 7.41, /* :: */[
                                           1.671,
                                           /* :: */[
                                             -1.012,
                                             /* :: */[
                                               -0.318,
-                                              /* [] */0
-                                            ]
-                                          ]
-                                        ])));
-                    }));
-      }));
-
-describe("add_one", (function () {
-        return Jest.test("basic", (function (param) {
-                      return Jest.Expect[/* toEqual */12](/* :: */[
-                                  2,
-                                  /* :: */[
-                                    3,
-                                    /* :: */[
-                                      4,
-                                      /* [] */0
-                                    ]
-                                  ]
-                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.add_one(/* :: */[
-                                          1,
-                                          /* :: */[
-                                            2,
-                                            /* :: */[
-                                              3,
                                               /* [] */0
                                             ]
                                           ]
