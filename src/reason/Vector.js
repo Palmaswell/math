@@ -27,19 +27,28 @@ function substract($staropt$star, v1, v2) {
   }
 }
 
-function scale($staropt$star, n, v) {
-  var i = $staropt$star !== undefined ? $staropt$star : 0;
+function scale(n, v) {
   if (v) {
     return /* :: */[
             v[0] * n,
-            scale(i + 1 | 0, n, v[1])
+            scale(n, v[1])
           ];
   } else {
     return /* [] */0;
   }
 }
 
+function magnitude(l) {
+  if (l) {
+    var h = l[0];
+    return h * h + magnitude(l[1]);
+  } else {
+    return 0.0;
+  }
+}
+
 exports.add = add;
 exports.substract = substract;
 exports.scale = scale;
+exports.magnitude = magnitude;
 /* No side effect */

@@ -1,3 +1,4 @@
+
 /* add: (list(float),  list(float)) => list(float) */
 let rec add = (~i=0, v1, v2) =>
     switch v1 {
@@ -13,10 +14,15 @@ let rec substract = (~i=0, v1, v2) =>
     };
 
 /* scale: (float, list(float)) => list(float) */
-let rec scale = (~i=0, n, v) =>
+let rec scale = (n, v) =>
     switch v {
     | [] => []
-    | [h, ...t] => [h *. n, ...scale(~i = i + 1, n, t)]
+    | [h, ...t] => [h *. n, ...scale(n, t)]
     };
 
 /* (list(float)) => float */
+let rec magnitude = l =>
+  switch l {
+  | [] => 0.0
+  | [h, ...t] => (h *. h ) +. magnitude(t)
+  };

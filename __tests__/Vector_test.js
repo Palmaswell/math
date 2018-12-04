@@ -123,7 +123,7 @@ describe("scale", (function () {
                                       /* [] */0
                                     ]
                                   ]
-                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.scale(undefined, 7.41, /* :: */[
+                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.scale(7.41, /* :: */[
                                           1.671,
                                           /* :: */[
                                             -1.012,
