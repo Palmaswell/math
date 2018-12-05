@@ -1,4 +1,4 @@
-import * as Math from './math';
+import * as Math from './root';
 
 test('Square Root Bisection method', () => {
   expect(Math.bisection({
