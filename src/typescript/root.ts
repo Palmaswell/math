@@ -3,7 +3,6 @@ export const f = (n: number) => (x: number) => x * x - n;
 /**
  * Bisection method
  * Root finding proplem `f(x) = 0`
- * @param n root number to find.
  * @param f a continuous function.
  * @param a interval |a, b|
  * @param b interval |a, b|
