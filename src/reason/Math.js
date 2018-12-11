@@ -11,5 +11,15 @@ function float_abs(x) {
   }
 }
 
+function float_sign(n) {
+  var match = n < 0.00;
+  if (match) {
+    return -1.00;
+  } else {
+    return 1.00;
+  }
+}
+
 exports.float_abs = float_abs;
+exports.float_sign = float_sign;
 /* No side effect */

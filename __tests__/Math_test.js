@@ -19,4 +19,13 @@ describe("Math absolute value from floating number utility", (function () {
                     }));
       }));
 
+describe("number sign proof function", (function () {
+        Jest.test("negative number", (function (param) {
+                return Jest.Expect[/* toEqual */12](-1.00, Jest.Expect[/* expect */0](Math$AppliedLinearAlgebra.float_sign(-3.00)));
+              }));
+        return Jest.test("positive number", (function (param) {
+                      return Jest.Expect[/* toEqual */12](1.00, Jest.Expect[/* expect */0](Math$AppliedLinearAlgebra.float_sign(3.00)));
+                    }));
+      }));
+
 /*  Not a pure module */
