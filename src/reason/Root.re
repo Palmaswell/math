@@ -1,21 +1,22 @@
+open Math;
 let f = (n, x) => (x *. x) -. n;
 
-/* let bisection = (foo, a, b) => {
-  let TOL = 1e-2;
-  let NMAX = 1e+3;
-  let c = a +. b /. 2.0;
-  let a = foo()
-
-}; */
-
-/* let bisection = (f, a, b) => {
-  let c = (a +. b) /. 2.0;
-  let rec aux = (~i=0, ~tol=1e-2, ~n_max=1000, c) => {
-    switch c {
-    | c when f(c) == 0.0 => c
-    | c when (b -. a) /. 2.0 < tol => c
-    | _ => aux(~i= i + 1, (a +. b) /. 2.0)
-    };
+let bisection = (f, ~a, ~b,) => {
+  let i = ref(0);
+  let x = ref(a);
+  let y = ref(b);
+  let c = ref(a +. b /. 2.00);
+  let tol = 1e-2;
+  /* let n_max = 1000; */
+  if (f(c) === 0.00 || (b -. a) /. 2.00 < tol) {
+    c;
   }
-  aux(c);
-}; */
+  else {
+  if (float_sign(f(x)) !== float_sign(f(c))) {
+    1.00;
+  } else {
+    3.00;
+  }
+}
+};
+
