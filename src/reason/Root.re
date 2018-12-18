@@ -1,7 +1,7 @@
-open Math;
+/* open Math;
 let f = (n, x) => (x *. x) -. n;
 
-/* let bisection = (f, ~a, ~b,) => {
+let bisection = (f, ~a, ~b,) => {
   let i = ref(0);
   let x = ref(a);
   let y = ref(b);
@@ -13,9 +13,9 @@ let f = (n, x) => (x *. x) -. n;
   }
   else {
   if (float_sign(f(x)) !== float_sign(f(c))) {
-    1.00;
+    1.00
   } else {
-    3.00;
+    3.00
   }
 }
 }; */

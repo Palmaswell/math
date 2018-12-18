@@ -17,6 +17,12 @@ export const magnitude = (v: number[]) => (
   .reduce((acc: number, curr: number) => acc + curr))
 );
 
-// (number[], number[]) => number[]
-export const dotProduct = (v1: number[], v2: number[]) => v1.map((entry: number, i: number) => entry * v2[i]);
+// (number[], number[]) => number
+export const dotProduct = (v1: number[], v2: number[]) => {
+  if (v1.length !== v2.length) {
+    return;
+  }
+  return v1.map((entry: number, i: number) => entry * v2[i])
+    .reduce((accEntry: number, currEntry: number) => accEntry + currEntry);
+}
 
