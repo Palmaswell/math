@@ -22,4 +22,10 @@ test('Magnitude', () => {
 test('Dot product', () => {
   expect(Vector.dotProduct([7.887, 4.138], [-8.802, 6.776])).toEqual(-41.382286);
   expect(Vector.dotProduct([-5.955, -4.904, -1.874], [-4.496, -8.755, 7.103])).toEqual(56.397178000000004);
-})
+});
+
+test('Vector angle', () => {
+  expect(Vector.angle([3.183, -7.627], [-2.668, 5.319])).toEqual(3.0720263098372476);
+  expect(Vector.angle([7.35, 0,221, 5,188], [2.751, 8.259, 3.985])).toEqual(3.0720263098372476);
+});
+
