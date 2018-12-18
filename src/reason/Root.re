@@ -1,7 +1,7 @@
 open Math;
 let f = (n, x) => (x *. x) -. n;
 
-let bisection = (f, ~a, ~b,) => {
+/* let bisection = (f, ~a, ~b,) => {
   let i = ref(0);
   let x = ref(a);
   let y = ref(b);
@@ -18,5 +18,5 @@ let bisection = (f, ~a, ~b,) => {
     3.00;
   }
 }
-};
+}; */
 

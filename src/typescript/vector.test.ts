@@ -18,3 +18,8 @@ test('Scalar multiplication', () => {
 test('Magnitude', () => {
   expect(Vector.magnitude([-4.587, 0.685, 8.444])).toEqual(9.633842950764768);
 });
+
+test('Dot product', () => {
+  expect(Vector.dotProduct([7.887, 4.138], [-8.802, 6.776])).toEqual([-69.421374, 28.039088]);
+  expect(Vector.dotProduct([-5.955, -4.904, -1.874], [-4.496, -8.755, 7.103])).toEqual([26.773680000000002, 42.934520000000006, -13.311022]);
+})

@@ -5,13 +5,8 @@ var Jest = require("@glennsl/bs-jest/src/jest.js");
 var Root$AppliedLinearAlgebra = require("../src/reason/Root.js");
 
 describe("Square Root Bisection method", (function () {
-        Jest.test("Continuous function", (function (param) {
-                return Jest.Expect[/* toEqual */12](-9.00, Jest.Expect[/* expect */0](Root$AppliedLinearAlgebra.f(10.00, 1.00)));
-              }));
-        return Jest.test("Root of 10", (function (param) {
-                      return Jest.Expect[/* toEqual */12](3.162277660168379, Jest.Expect[/* expect */0](Root$AppliedLinearAlgebra.bisection((function (param) {
-                                            return Root$AppliedLinearAlgebra.f(10.00, param);
-                                          }), -2.00, 5.00)));
+        return Jest.test("Continuous function", (function (param) {
+                      return Jest.Expect[/* toEqual */12](-9.00, Jest.Expect[/* expect */0](Root$AppliedLinearAlgebra.f(10.00, 1.00)));
                     }));
       }));
 
