@@ -27,7 +27,7 @@ export const magnitude = (v: number[]) => (
  * and add those products together.
  * v * w  = v1 w1 + v2 w2 + v3 w3 + .... + vn wn
  */
-export const dotProduct = (v: number[], w: number[], inDegrees = false): number => {
+export const dotProduct = (v: number[], w: number[]): number => {
   if (v.length !== w.length) {
     console.log(`
     > Dot Product operation can only be executed on vectors of the same size. ⚠️
@@ -46,7 +46,7 @@ export const dotProduct = (v: number[], w: number[], inDegrees = false): number 
  * both vectors.
  * arccos(v * w / ||v|| * ||w||)
  */
-export const angle = (v: number[], w: number[]): number => {
+export const angle = (v: number[], w: number[], inDegrees = false): number => {
   if (v.length !== w.length) {
     console.log(`
     > Vector angle operation can only be executed on vectors of the same size. ⚠️
