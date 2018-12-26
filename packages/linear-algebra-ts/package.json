@@ -1,0 +1,23 @@
+{
+  "name": "linear-algebra-ts",
+  "version": "1.0.0",
+  "description": "Typescript applied linear algebra",
+  "main": "./index.ts",
+  "scripts": {
+    "dev": "ts-node-dev --respawn index.ts",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "author": "Mauricio Palma <mauricio.palma@woodlikeocean.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5"
+  },
+  "dependencies": {
+    "ts-node": "^7.0.1",
+    "ts-node-dev": "^1.0.0-pre.32",
+    "typescript": "^3.2.2"
+  }
+}

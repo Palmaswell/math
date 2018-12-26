@@ -1,0 +1,10 @@
+node_modules
+*.log
+.tmp
+.serverless
+package-lock.json
+.yarn-metadata.json
+.DS_Store
+lib
+.merlin
+src/*bs.js
