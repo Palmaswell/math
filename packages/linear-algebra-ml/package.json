@@ -1,0 +1,20 @@
+{
+  "name": "linear-algebra-ml",
+  "version": "1.0.0",
+  "description": "ReasonML linear algebra",
+  "main": "index.js",
+  "scripts": {
+    "bsb": "bsb",
+    "build": "bsb -make-world",
+    "dev": "bsb -w -verbose",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "author": "Mauricio Palma <mauricio.palma@woodlikeocean.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@glennsl/bs-jest": "^0.4.6",
+    "bs-platform": "^4.0.14",
+    "jest": "^23.6.0"
+  }
+}

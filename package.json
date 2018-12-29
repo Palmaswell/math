@@ -2,24 +2,21 @@
   "name": "applied-linear-algebra",
   "version": "1.0.0",
   "description": "Applied Linear Algebra exercises in Typescript and Reason",
-  "main": "./src/typescript/index.ts",
-  "scripts": {
-    "dev:reason": "bsb -w -verbose",
-    "dev:type": "ts-node-dev --respawn src/typescript/index.ts",
-    "test": "jest --watchAll"
-  },
   "private": true,
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:ts\" \"npm run dev:ml\"",
+    "dev:ts": "yarn workspace linear-algebra-ts dev",
+    "dev:ml": "yarn workspace linear-algebra-ml dev",
+    "test:ts": "yarn workspace linear-algebra-ts test",
+    "test:ml": "yarn workspace linear-algebra-ml test"
+  },
   "author": "Mauricio Palma <mauricio.palma@woodlikeocean.com>",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@glennsl/bs-jest": "^0.4.5",
-    "@types/big-integer": "^0.0.31",
-    "big-integer": "^1.6.36",
-    "bs-platform": "^4.0.7",
-    "ts-jest": "^23.10.4"
+    "concurrently": "^4.1.0"
   }
 }
