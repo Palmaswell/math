@@ -1,5 +1,4 @@
 
-export const f = (n: number) => (x: number) => x * x - n;
 /**
  * Bisection method
  * Root finding proplem `f(x) = 0`
@@ -7,30 +6,39 @@ export const f = (n: number) => (x: number) => x * x - n;
  * @param a interval |a, b|
  * @param b interval |a, b|
  */
+
 export interface BisectionProps {
   f: (n: number) => number;
-  a: number;
-  b: number;
-
+  low: number;
+  high: number;
+  i?: number;
 }
-export const bisection = ({ f, a, b }: BisectionProps): number => {
-  let i = 0;
-  let c =  (a + b) / 2;
-  const TOL = 1e-2;
-  const NMAX = 1000;
+export const f = (value: number) => (n: number) => n * n - value;
 
-  if (f(c) === 0 || (b - a) / 2 < TOL) {
-    return c;
-  };
+export const bisection = ({f, low, high, i = 0}: BisectionProps): number => {
+  const tol = 1e-15;
+  const mid = (low + high) / 2;
 
-  while( Math.abs(f(c)) && i <= NMAX ) {
-    if (Math.sign(f(a)) !== Math.sign(f(c))) {
-      b = c;
-    } else if (Math.sign(f(b)) !== Math.sign(f(c))) {
-      a = c;
-    }
-    c = (a + b) / 2;
-    i++;
+  if (f(mid) === 0 || (high - low) / 2 < tol) {
+    return +mid.toFixed(6);
   }
-  return c;
+  if (Math.abs(f(mid)) && i <= 1000) {
+    if(Math.sign(f(low)) !== Math.sign(f(mid))) {
+      return bisection({
+        f,
+        low,
+        high: mid,
+        i: i + 1
+      })
+    }
+    else if (Math.sign(f(high)) !== Math.sign(f(mid))) {
+      return bisection({
+        f,
+        low: mid,
+        high,
+        i: i + 1
+      })
+    }
+    return +mid.toFixed(6);
+  }
 }
