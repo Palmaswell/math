@@ -16,5 +16,6 @@
     "@glennsl/bs-jest": "^0.4.6",
     "bs-platform": "^4.0.14",
     "jest": "^23.6.0"
-  }
+  },
+  "dependencies": {}
 }
