@@ -20,9 +20,15 @@ describe("Square Root Bisection method", (function () {
                                       return Root$AppliedLinearAlgebra.f(16.00, param);
                                     }), -2.00, 6.00)));
               }));
-        return Jest.test("Root of 11", (function (param) {
-                      return Jest.Expect[/* toEqual */12](3.3166247903554, Jest.Expect[/* expect */0](Root$AppliedLinearAlgebra.bisection(undefined, (function (param) {
-                                            return Root$AppliedLinearAlgebra.f(11.00, param);
+        Jest.test("Root of 11", (function (param) {
+                return Jest.Expect[/* toEqual */12](3.3166247903554, Jest.Expect[/* expect */0](Root$AppliedLinearAlgebra.bisection(undefined, (function (param) {
+                                      return Root$AppliedLinearAlgebra.f(11.00, param);
+                                    }), -2.00, 5.00)));
+              }));
+        return Jest.test("More root tests 1", (function (param) {
+                      var partial_arg = -4.587 * -4.587;
+                      return Jest.Expect[/* toEqual */12](4.587, Jest.Expect[/* expect */0](Root$AppliedLinearAlgebra.bisection(undefined, (function (param) {
+                                            return Root$AppliedLinearAlgebra.f(partial_arg, param);
                                           }), -2.00, 5.00)));
                     }));
       }));

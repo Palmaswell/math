@@ -18,7 +18,6 @@ describe("scale", () => {
   test("floats", () => expect(scale(7.41, [1.671, -1.012, -0.318])) |> toEqual([12.38211, -7.49892, -2.35638]));
 });
 
-
 /* describe("magnitude", () => {
   test("test", () => expect(magnitude([-4.587, 0.685, 8.444])) |> toEqual(9.633842950764768))
 }); */

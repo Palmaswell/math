@@ -2,6 +2,7 @@
 'use strict';
 
 var List = require("bs-platform/lib/js/list.js");
+var Root$AppliedLinearAlgebra = require("./Root.js");
 
 function add($staropt$star, v1, v2) {
   var i = $staropt$star !== undefined ? $staropt$star : 0;
@@ -38,12 +39,15 @@ function scale(n, v) {
   }
 }
 
-function magnitude(l) {
-  if (l) {
-    var h = l[0];
-    return h * h + magnitude(l[1]);
+function magnitude(v) {
+  if (v) {
+    var entry = v[0];
+    var partial_arg = entry * entry;
+    return Root$AppliedLinearAlgebra.bisection(undefined, (function (param) {
+                  return Root$AppliedLinearAlgebra.f(partial_arg, param);
+                }), -2.00, 5.00) + magnitude(v[1]);
   } else {
-    return 0.0;
+    return 0.00;
   }
 }
 

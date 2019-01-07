@@ -11,7 +11,14 @@ export const substract = (v1: number[], v2: number[]): number[] => (
 // (number[], number[]) => number[]
 export const scalar = (n: number, v1: number[]) => v1.map((coord: number) => coord * n)
 
-// (number[]) => number
+/**
+ *
+ * @name magnitude
+ * @type { number }
+ * @description refers to how much movement a vector quantifies
+ * or the distance between the two points it connects.
+ * ||v|| = √(entry1)² + (entry2)² + ... + (entryN)²
+ */
 export const magnitude = (v: number[]) => (
   Math.sqrt(v.map((coord: number) => Math.pow(coord, 2))
   .reduce((acc: number, curr: number) => acc + curr))

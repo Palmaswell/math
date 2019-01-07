@@ -1,4 +1,4 @@
-
+open Root;
 /* add: (list(float),  list(float)) => list(float) */
 let rec add = (~i=0, v1, v2) =>
     switch v1 {
@@ -15,14 +15,22 @@ let rec substract = (~i=0, v1, v2) =>
 
 /* scale: (float, list(float)) => list(float) */
 let rec scale = (n, v) =>
-    switch v {
-    | [] => []
-    | [h, ...t] => [h *. n, ...scale(n, t)]
-    };
+  switch v {
+  | [] => []
+  | [h, ...t] => [h *. n, ...scale(n, t)]
+  };
 
-/* (list(float)) => float */
-let rec magnitude = l =>
-  switch l {
-  | [] => 0.0
-  | [h, ...t] => (h *. h ) +. magnitude(t)
+/**
+ *
+ * @name magnitude
+ * @type { number }
+ * @description The magnitude of a vector refers
+ * to how much movement a vector quantifies. Or
+ * the distance between the two points it connects.
+ * ||v|| = √(entry1)² + (entry2)² + ... + (entryN)²
+ */
+let rec magnitude = v =>
+  switch v {
+  | [] => 0.00
+  | [entry, ...t] => bisection(f(entry *. entry), -2.00, 5.00) +. magnitude(t)
   };
