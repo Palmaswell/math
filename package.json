@@ -10,8 +10,9 @@
     "dev": "concurrently \"npm run dev:ts\" \"npm run dev:ml\"",
     "dev:ts": "yarn workspace linear-algebra-ts dev",
     "dev:ml": "yarn workspace linear-algebra-ml dev",
-    "test:ts": "yarn workspace linear-algebra-ts test",
-    "test:ml": "yarn workspace linear-algebra-ml test"
+    "test": "concurrently \"npm run test:ts\" \"npm run test:ml\"",
+    "test:ts": "yarn workspace linear-algebra-ts test:watch",
+    "test:ml": "yarn workspace linear-algebra-ml test:watch"
   },
   "author": "Mauricio Palma <mauricio.palma@woodlikeocean.com>",
   "license": "MIT",
