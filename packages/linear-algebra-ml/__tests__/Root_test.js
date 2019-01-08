@@ -25,11 +25,23 @@ describe("Square Root Bisection method", (function () {
                                       return Root$AppliedLinearAlgebra.f(11.00, param);
                                     }), -2.00, 5.00)));
               }));
-        return Jest.test("More root tests 1", (function (param) {
-                      var partial_arg = -4.587 * -4.587;
-                      return Jest.Expect[/* toEqual */12](4.587, Jest.Expect[/* expect */0](Root$AppliedLinearAlgebra.bisection(undefined, (function (param) {
+        Jest.test("More root tests 1", (function (param) {
+                var partial_arg = -4.587 * -4.587;
+                return Jest.Expect[/* toEqual */12](4.586999999999999, Jest.Expect[/* expect */0](Root$AppliedLinearAlgebra.bisection(undefined, (function (param) {
+                                      return Root$AppliedLinearAlgebra.f(partial_arg, param);
+                                    }), 0.00, 4.587)));
+              }));
+        Jest.test("More root tests 2", (function (param) {
+                var partial_arg = 0.685 * 0.685;
+                return Jest.Expect[/* toEqual */12](0.6849999999999996, Jest.Expect[/* expect */0](Root$AppliedLinearAlgebra.bisection(undefined, (function (param) {
+                                      return Root$AppliedLinearAlgebra.f(partial_arg, param);
+                                    }), 0.00, 1.00)));
+              }));
+        return Jest.test("More root tests 3", (function (param) {
+                      var partial_arg = 8.444 * 8.444;
+                      return Jest.Expect[/* toEqual */12](8.444, Jest.Expect[/* expect */0](Root$AppliedLinearAlgebra.bisection(undefined, (function (param) {
                                             return Root$AppliedLinearAlgebra.f(partial_arg, param);
-                                          }), -2.00, 5.00)));
+                                          }), 0.00, 71.30114)));
                     }));
       }));
 
