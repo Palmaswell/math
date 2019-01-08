@@ -32,5 +32,5 @@ let rec scale = (n, v) =>
 let rec magnitude = v =>
   switch v {
   | [] => 0.00
-  | [entry, ...t] => bisection(f(entry *. entry), -2.00, 5.00) +. magnitude(t)
+  | [entry, ...t] => bisection(intermediate_zero(entry *. entry), -2.00, 5.00) +. magnitude(t)
   };

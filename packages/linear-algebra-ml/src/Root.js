@@ -2,11 +2,8 @@
 'use strict';
 
 var Curry = require("bs-platform/lib/js/curry.js");
+var Caml_builtin_exceptions = require("bs-platform/lib/js/caml_builtin_exceptions.js");
 var Math$AppliedLinearAlgebra = require("./Math.js");
-
-function f(v, n) {
-  return n * n - v;
-}
 
 function bisection(_$staropt$star, f, _l, _h) {
   while(true) {
@@ -31,6 +28,25 @@ function bisection(_$staropt$star, f, _l, _h) {
   };
 }
 
-exports.f = f;
+function intermediate_zero(x, n) {
+  return n * n - x;
+}
+
+function float_sqroot(x) {
+  if (x < 0.0) {
+    throw Caml_builtin_exceptions.not_found;
+  }
+  if (x === 0.00) {
+    return 0.00;
+  } else {
+    var match = x < 1.00;
+    return bisection(undefined, (function (param) {
+                  return intermediate_zero(x, param);
+                }), 0.00, match ? 1.00 : x);
+  }
+}
+
 exports.bisection = bisection;
+exports.intermediate_zero = intermediate_zero;
+exports.float_sqroot = float_sqroot;
 /* No side effect */

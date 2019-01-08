@@ -44,7 +44,7 @@ function magnitude(v) {
     var entry = v[0];
     var partial_arg = entry * entry;
     return Root$AppliedLinearAlgebra.bisection(undefined, (function (param) {
-                  return Root$AppliedLinearAlgebra.f(partial_arg, param);
+                  return Root$AppliedLinearAlgebra.intermediate_zero(partial_arg, param);
                 }), -2.00, 5.00) + magnitude(v[1]);
   } else {
     return 0.00;
