@@ -26,6 +26,16 @@ export const magnitude = (v: number[]) => (
 
 /**
  *
+ * @name directon
+ * @type { Array }
+ * @description refers to where the director's movement is pointing.
+ * A unit vector is a vector whose magnitude is 1
+ * 1 / ||v|| * v = u
+ */
+export const direction = (v: number[]): number[] => v.map(entry =>  +(1 / magnitude(v) * entry).toFixed(3));
+
+/**
+ *
  * @name dotProduct
  * @type { number }
  * @description calculates the inner product of
