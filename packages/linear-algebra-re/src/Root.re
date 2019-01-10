@@ -45,7 +45,7 @@ let intermediate_zero = (x, n) => (n *. n) -. x;
  */
 let float_sqroot = x => {
   if (x < 0.0) {
-    raise(Not_found)
+    raise(Invalid_argument("Negative number are not allowed"))
   }
   if (x === 0.00) {
     0.00
@@ -57,4 +57,4 @@ let float_sqroot = x => {
       x < 1.00 ? 1.00 : x
     )
   }
-}
+};

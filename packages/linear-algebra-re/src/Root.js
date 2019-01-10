@@ -34,7 +34,10 @@ function intermediate_zero(x, n) {
 
 function float_sqroot(x) {
   if (x < 0.0) {
-    throw Caml_builtin_exceptions.not_found;
+    throw [
+          Caml_builtin_exceptions.invalid_argument,
+          "Negative number are not allowed"
+        ];
   }
   if (x === 0.00) {
     return 0.00;
