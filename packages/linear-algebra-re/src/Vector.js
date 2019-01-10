@@ -40,15 +40,15 @@ function scale(n, v) {
 }
 
 function magnitude(v) {
-  if (v) {
-    var entry = v[0];
-    var partial_arg = entry * entry;
-    return Root$LinearAlgebraRe.bisection(undefined, (function (param) {
-                  return Root$LinearAlgebraRe.intermediate_zero(partial_arg, param);
-                }), -2.00, 5.00) + magnitude(v[1]);
-  } else {
-    return 0.00;
-  }
+  var aux = function (v) {
+    if (v) {
+      var entry = v[0];
+      return entry * entry + aux(v[1]);
+    } else {
+      return 0.00;
+    }
+  };
+  return Root$LinearAlgebraRe.float_sqroot(aux(v));
 }
 
 exports.add = add;

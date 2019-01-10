@@ -136,4 +136,40 @@ describe("scale", (function () {
                     }));
       }));
 
+describe("magnitude", (function () {
+        Jest.test("3 entry vector", (function (param) {
+                return Jest.Expect[/* toEqual */12](7.4402829247280655, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.magnitude(/* :: */[
+                                    -0.221,
+                                    /* :: */[
+                                      7.437,
+                                      /* [] */0
+                                    ]
+                                  ])));
+              }));
+        Jest.test("3 entry vector", (function (param) {
+                return Jest.Expect[/* toEqual */12](9.633842950764768, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.magnitude(/* :: */[
+                                    -4.587,
+                                    /* :: */[
+                                      0.685,
+                                      /* :: */[
+                                        8.444,
+                                        /* [] */0
+                                      ]
+                                    ]
+                                  ])));
+              }));
+        return Jest.test("3 entry vector", (function (param) {
+                      return Jest.Expect[/* toEqual */12](10.884187567292287, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.magnitude(/* :: */[
+                                          8.813,
+                                          /* :: */[
+                                            -1.331,
+                                            /* :: */[
+                                              -6.247,
+                                              /* [] */0
+                                            ]
+                                          ]
+                                        ])));
+                    }));
+      }));
+
 /*  Not a pure module */

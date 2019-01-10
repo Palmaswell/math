@@ -16,7 +16,9 @@ test('Scalar multiplication', () => {
 });
 
 test('Magnitude', () => {
+  expect(Vector.magnitude([-0.221, 7.437])).toEqual(7.440282924728065);
   expect(Vector.magnitude([-4.587, 0.685, 8.444])).toEqual(9.633842950764768);
+  expect(Vector.magnitude([8.813, -1.331, -6.247])).toEqual(10.884187567292289);
 });
 
 test('Dot product', () => {

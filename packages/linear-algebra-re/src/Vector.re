@@ -29,8 +29,11 @@ let rec scale = (n, v) =>
  * the distance between the two points it connects.
  * ||v|| = √(entry1)² + (entry2)² + ... + (entryN)²
  */
-let rec magnitude = v =>
-  switch v {
-  | [] => 0.00
-  | [entry, ...t] => bisection(intermediate_zero(entry *. entry), -2.00, 5.00) +. magnitude(t)
+let magnitude = v => {
+  let rec aux = v =>
+    switch v {
+    | [] => 0.00
+    | [entry, ...t] => entry *. entry +. aux(t)
   };
+  float_sqroot(aux(v));
+}

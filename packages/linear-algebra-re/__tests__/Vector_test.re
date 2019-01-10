@@ -18,6 +18,8 @@ describe("scale", () => {
   test("floats", () => expect(scale(7.41, [1.671, -1.012, -0.318])) |> toEqual([12.38211, -7.49892, -2.35638]));
 });
 
-/* describe("magnitude", () => {
-  test("test", () => expect(magnitude([-4.587, 0.685, 8.444])) |> toEqual(9.633842950764768))
-}); */
+describe("magnitude", () => {
+  test("3 entry vector", () => expect(magnitude([-0.221, 7.437])) |> toEqual(7.4402829247280655))
+  test("3 entry vector", () => expect(magnitude([-4.587, 0.685, 8.444])) |> toEqual(9.633842950764768))
+  test("3 entry vector", () => expect(magnitude([8.813, -1.331, -6.247])) |> toEqual(10.884187567292287))
+});
