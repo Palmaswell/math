@@ -1,7 +1,7 @@
 {
-  "name": "linear-algebra-ml",
+  "name": "linear-algebra-re",
   "version": "1.0.0",
-  "description": "ReasonML linear algebra",
+  "description": "ReasonML applied linear algebra",
   "main": "index.js",
   "scripts": {
     "bsb": "bsb",

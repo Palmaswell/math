@@ -2,8 +2,8 @@
 'use strict';
 
 var Curry = require("bs-platform/lib/js/curry.js");
+var Math$LinearAlgebraRe = require("./Math.js");
 var Caml_builtin_exceptions = require("bs-platform/lib/js/caml_builtin_exceptions.js");
-var Math$AppliedLinearAlgebra = require("./Math.js");
 
 function bisection(_$staropt$star, f, _l, _h) {
   while(true) {
@@ -14,11 +14,11 @@ function bisection(_$staropt$star, f, _l, _h) {
     var m = (l + h) / 2.00;
     if (Curry._1(f, m) === 0.00 || (h - l) / 2.00 < 1e-15) {
       return m;
-    } else if (Math$AppliedLinearAlgebra.float_sign(Curry._1(f, l)) !== Math$AppliedLinearAlgebra.float_sign(Curry._1(f, m))) {
+    } else if (Math$LinearAlgebraRe.float_sign(Curry._1(f, l)) !== Math$LinearAlgebraRe.float_sign(Curry._1(f, m))) {
       _h = m;
       _$staropt$star = i + 1 | 0;
       continue ;
-    } else if (Math$AppliedLinearAlgebra.float_sign(Curry._1(f, h)) !== Math$AppliedLinearAlgebra.float_sign(Curry._1(f, m))) {
+    } else if (Math$LinearAlgebraRe.float_sign(Curry._1(f, h)) !== Math$LinearAlgebraRe.float_sign(Curry._1(f, m))) {
       _l = m;
       _$staropt$star = i + 1 | 0;
       continue ;

@@ -1,7 +1,7 @@
 {
-  "name": "applied-linear-algebra",
+  "name": "linear-algebra-re",
   "version": "1.0.0",
-  "description": "Applied Linear Algebra exercises in Typescript and Reason",
+  "description": "ReasonML Applied Linear Algebra",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -9,10 +9,10 @@
   "scripts": {
     "dev": "concurrently \"npm run dev:ts\" \"npm run dev:ml\"",
     "dev:ts": "yarn workspace linear-algebra-ts dev",
-    "dev:ml": "yarn workspace linear-algebra-ml dev",
-    "test": "concurrently \"npm run test:ts\" \"npm run test:ml\"",
+    "dev:re": "yarn workspace linear-algebra-re dev",
+    "test": "concurrently \"npm run test:ts\" \"npm run test:re\"",
     "test:ts": "yarn workspace linear-algebra-ts test:watch",
-    "test:ml": "yarn workspace linear-algebra-ml test:watch"
+    "test:re": "yarn workspace linear-algebra-re test:watch"
   },
   "author": "Mauricio Palma <mauricio.palma@woodlikeocean.com>",
   "license": "MIT",

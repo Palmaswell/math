@@ -2,7 +2,7 @@
 'use strict';
 
 var Jest = require("@glennsl/bs-jest/src/jest.js");
-var Vector$AppliedLinearAlgebra = require("../src/Vector.js");
+var Vector$LinearAlgebraRe = require("../src/Vector.js");
 
 describe("add", (function () {
         Jest.test("basic floats", (function (param) {
@@ -15,7 +15,7 @@ describe("add", (function () {
                                 /* [] */0
                               ]
                             ]
-                          ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.add(undefined, /* :: */[
+                          ], Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.add(undefined, /* :: */[
                                     2.2,
                                     /* :: */[
                                       4.3,
@@ -42,7 +42,7 @@ describe("add", (function () {
                                     -7.229999999999999,
                                     /* [] */0
                                   ]
-                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.add(undefined, /* :: */[
+                                ], Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.add(undefined, /* :: */[
                                           8.218,
                                           /* :: */[
                                             -9.341,
@@ -69,7 +69,7 @@ describe("substract", (function () {
                                 /* [] */0
                               ]
                             ]
-                          ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.substract(undefined, /* :: */[
+                          ], Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.substract(undefined, /* :: */[
                                     -2.0,
                                     /* :: */[
                                       3.0,
@@ -96,7 +96,7 @@ describe("substract", (function () {
                                     7.337,
                                     /* [] */0
                                   ]
-                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.substract(undefined, /* :: */[
+                                ], Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.substract(undefined, /* :: */[
                                           7.119,
                                           /* :: */[
                                             8.215,
@@ -123,7 +123,7 @@ describe("scale", (function () {
                                       /* [] */0
                                     ]
                                   ]
-                                ], Jest.Expect[/* expect */0](Vector$AppliedLinearAlgebra.scale(7.41, /* :: */[
+                                ], Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.scale(7.41, /* :: */[
                                           1.671,
                                           /* :: */[
                                             -1.012,
