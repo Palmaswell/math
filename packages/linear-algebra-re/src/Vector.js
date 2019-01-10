@@ -51,8 +51,20 @@ function magnitude(v) {
   return Root$LinearAlgebraRe.float_sqroot(aux(v));
 }
 
+function direction(v) {
+  if (v) {
+    return /* :: */[
+            1.00 / magnitude(v) * v[0],
+            direction(v[1])
+          ];
+  } else {
+    return /* [] */0;
+  }
+}
+
 exports.add = add;
 exports.substract = substract;
 exports.scale = scale;
 exports.magnitude = magnitude;
+exports.direction = direction;
 /* No side effect */

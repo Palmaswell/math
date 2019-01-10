@@ -36,4 +36,19 @@ let magnitude = v => {
     | [entry, ...t] => entry *. entry +. aux(t)
   };
   float_sqroot(aux(v));
+};
+
+
+/**
+ *
+ * @name directon
+ * @type { Array }
+ * @description refers to where the director's movement is pointing.
+ * A unit vector is a vector whose magnitude is 1
+ * 1 / ||v|| * v = u
+ */
+let rec direction = v =>
+  switch v {
+  | [] => []
+  | [entry, ...t] => [1.00 /. magnitude(v) *. entry, ...direction(t)]
 }

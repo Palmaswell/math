@@ -19,7 +19,12 @@ describe("scale", () => {
 });
 
 describe("magnitude", () => {
-  test("3 entry vector", () => expect(magnitude([-0.221, 7.437])) |> toEqual(7.4402829247280655))
+  test("2 entry vector", () => expect(magnitude([-0.221, 7.437])) |> toEqual(7.4402829247280655))
   test("3 entry vector", () => expect(magnitude([-4.587, 0.685, 8.444])) |> toEqual(9.633842950764768))
   test("3 entry vector", () => expect(magnitude([8.813, -1.331, -6.247])) |> toEqual(10.884187567292287))
+});
+
+describe("direction", () => {
+  test("2 entry vector", () => expect(direction([5.581, -2.136])) |> toEqual([0.934, -0.357]))
+  test("3 entry vector", () => expect(direction([1.996, 3.108, -4.554])) |> toEqual([0.340, 0.530, -0.777]))
 });

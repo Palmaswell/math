@@ -137,7 +137,7 @@ describe("scale", (function () {
       }));
 
 describe("magnitude", (function () {
-        Jest.test("3 entry vector", (function (param) {
+        Jest.test("2 entry vector", (function (param) {
                 return Jest.Expect[/* toEqual */12](7.4402829247280655, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.magnitude(/* :: */[
                                     -0.221,
                                     /* :: */[
@@ -165,6 +165,45 @@ describe("magnitude", (function () {
                                             -1.331,
                                             /* :: */[
                                               -6.247,
+                                              /* [] */0
+                                            ]
+                                          ]
+                                        ])));
+                    }));
+      }));
+
+describe("direction", (function () {
+        Jest.test("2 entry vector", (function (param) {
+                return Jest.Expect[/* toEqual */12](/* :: */[
+                            0.934,
+                            /* :: */[
+                              -0.357,
+                              /* [] */0
+                            ]
+                          ], Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.direction(/* :: */[
+                                    5.581,
+                                    /* :: */[
+                                      -2.136,
+                                      /* [] */0
+                                    ]
+                                  ])));
+              }));
+        return Jest.test("3 entry vector", (function (param) {
+                      return Jest.Expect[/* toEqual */12](/* :: */[
+                                  0.340,
+                                  /* :: */[
+                                    0.530,
+                                    /* :: */[
+                                      -0.777,
+                                      /* [] */0
+                                    ]
+                                  ]
+                                ], Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.direction(/* :: */[
+                                          1.996,
+                                          /* :: */[
+                                            3.108,
+                                            /* :: */[
+                                              -4.554,
                                               /* [] */0
                                             ]
                                           ]

@@ -15,16 +15,16 @@ test('Scalar multiplication', () => {
     expect(Vector.scalar(7.41, [1.671, -1.012, -0.318])).toEqual([12.38211, -7.49892, -2.35638]);
 });
 
-test('Direction', () => {
-  expect(Vector.direction([5.581, -2.136])).toEqual([0.934, -0.357]);
-  expect(Vector.direction([1.996, 3.108, -4.554])).toEqual([0.340, 0.530, -0.777]);
-})
-
 test('Magnitude', () => {
   expect(Vector.magnitude([-0.221, 7.437])).toEqual(7.440282924728065);
   expect(Vector.magnitude([-4.587, 0.685, 8.444])).toEqual(9.633842950764768);
   expect(Vector.magnitude([8.813, -1.331, -6.247])).toEqual(10.884187567292289);
 });
+
+test('Direction', () => {
+  expect(Vector.direction([5.581, -2.136])).toEqual([0.934, -0.357]);
+  expect(Vector.direction([1.996, 3.108, -4.554])).toEqual([0.340, 0.530, -0.777]);
+})
 
 test('Dot product', () => {
   expect(Vector.dotProduct([7.887, 4.138], [-8.802, 6.776])).toEqual(-41.382286);

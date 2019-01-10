@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev:ts\" \"npm run dev:ml\"",
+    "dev": "concurrently \"npm run dev:ts\" \"npm run dev:re\"",
     "dev:ts": "yarn workspace linear-algebra-ts dev",
     "dev:re": "yarn workspace linear-algebra-re dev",
     "test": "concurrently \"npm run test:ts\" \"npm run test:re\"",

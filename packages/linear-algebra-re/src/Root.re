@@ -1,7 +1,4 @@
 open Math;
-type mathErrors = NegativeNumberNotAllow;
-
-
 /**
  * @name Bisection method
  * @description Finding the root of an equation `f(x) = 0`
