@@ -49,6 +49,24 @@ let magnitude = v => {
  */
 let rec direction = v =>
   switch v {
-  | [] => []
-  | [entry, ...t] => [1.00 /. magnitude(v) *. entry, ...direction(t)]
-}
+    | [] => []
+    | [entry, ...t] => [1.00 /. magnitude(v) *. (entry), ...direction(t)]
+  };
+
+
+/**
+ *
+ * @name dotProduct
+ * @type { number }
+ * @description calculates the inner product of
+ * two vectors of the same length.
+ * Basically we can multiply the corresponding components
+ * and add those products together.
+ * v * w  = v1 w1 + v2 w2 + v3 w3 + .... + vn wn
+ */
+let rec dot_product = (~i=0, v1, v2) =>
+  switch v1 {
+    | [] => 0.00
+    | [entry, ...t] => entry *. List.nth(v2, i) +. dot_product(~i=i+1, t, v2)
+  };
+

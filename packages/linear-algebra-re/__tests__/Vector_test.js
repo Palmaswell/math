@@ -137,6 +137,15 @@ describe("scale", (function () {
       }));
 
 describe("magnitude", (function () {
+        Jest.test("test direction vector", (function (param) {
+                return Jest.Expect[/* toEqual */12](5.975789236577877, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.magnitude(/* :: */[
+                                    5.581,
+                                    /* :: */[
+                                      -2.136,
+                                      /* [] */0
+                                    ]
+                                  ])));
+              }));
         Jest.test("2 entry vector", (function (param) {
                 return Jest.Expect[/* toEqual */12](7.4402829247280655, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.magnitude(/* :: */[
                                     -0.221,
@@ -172,38 +181,38 @@ describe("magnitude", (function () {
                     }));
       }));
 
-describe("direction", (function () {
-        Jest.test("2 entry vector", (function (param) {
-                return Jest.Expect[/* toEqual */12](/* :: */[
-                            0.934,
-                            /* :: */[
-                              -0.357,
-                              /* [] */0
-                            ]
-                          ], Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.direction(/* :: */[
-                                    5.581,
+describe("Dot Product", (function () {
+        Jest.test("test direction vector", (function (param) {
+                return Jest.Expect[/* toEqual */12](-41.382286, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.dot_product(undefined, /* :: */[
+                                    7.887,
                                     /* :: */[
-                                      -2.136,
+                                      4.138,
+                                      /* [] */0
+                                    ]
+                                  ], /* :: */[
+                                    -8.802,
+                                    /* :: */[
+                                      6.776,
                                       /* [] */0
                                     ]
                                   ])));
               }));
-        return Jest.test("3 entry vector", (function (param) {
-                      return Jest.Expect[/* toEqual */12](/* :: */[
-                                  0.340,
-                                  /* :: */[
-                                    0.530,
-                                    /* :: */[
-                                      -0.777,
-                                      /* [] */0
-                                    ]
-                                  ]
-                                ], Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.direction(/* :: */[
-                                          1.996,
+        return Jest.test("test direction vector", (function (param) {
+                      return Jest.Expect[/* toEqual */12](56.39717800000001, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.dot_product(undefined, /* :: */[
+                                          -5.955,
                                           /* :: */[
-                                            3.108,
+                                            -4.904,
                                             /* :: */[
-                                              -4.554,
+                                              -1.874,
+                                              /* [] */0
+                                            ]
+                                          ]
+                                        ], /* :: */[
+                                          -4.496,
+                                          /* :: */[
+                                            -8.755,
+                                            /* :: */[
+                                              7.103,
                                               /* [] */0
                                             ]
                                           ]

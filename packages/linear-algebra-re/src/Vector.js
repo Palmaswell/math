@@ -62,9 +62,19 @@ function direction(v) {
   }
 }
 
+function dot_product($staropt$star, v1, v2) {
+  var i = $staropt$star !== undefined ? $staropt$star : 0;
+  if (v1) {
+    return v1[0] * List.nth(v2, i) + dot_product(i + 1 | 0, v1[1], v2);
+  } else {
+    return 0.00;
+  }
+}
+
 exports.add = add;
 exports.substract = substract;
 exports.scale = scale;
 exports.magnitude = magnitude;
 exports.direction = direction;
+exports.dot_product = dot_product;
 /* No side effect */
