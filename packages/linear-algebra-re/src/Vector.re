@@ -1,3 +1,4 @@
+open Math;
 open Root;
 /* add: (list(float),  list(float)) => list(float) */
 let rec add = (~i=0, v1, v2) =>
@@ -69,4 +70,24 @@ let rec dot_product = (~i=0, v1, v2) =>
     | [] => 0.00
     | [entry, ...t] => entry *. List.nth(v2, i) +. dot_product(~i=i+1, t, v2)
   };
+
+/**
+ * @name angle
+ * @type { number }
+ * @description the angle betwenn two vectors:
+ * which is the inner product divided by the maginitude of
+ * both vectors.
+ * arccos(v * w / ||v|| * ||w||)
+ */
+type angleType =
+  | Radians
+  | Degrees;
+
+let angle = (angleType, v1, v2) =>
+  switch angleType {
+  | Radians => acos(dot_product(v1, v2) /. (magnitude(v1) *. magnitude(v2)))
+  | Degrees => rad_to_deg(acos(dot_product(v1, v2) /. (magnitude(v1) *. magnitude(v2))))
+  };
+
+
 

@@ -20,6 +20,11 @@ function float_sign(n) {
   }
 }
 
+function rad_to_deg(r) {
+  return r * (180.00 / 3.141592653589793);
+}
+
 exports.float_abs = float_abs;
 exports.float_sign = float_sign;
+exports.rad_to_deg = rad_to_deg;
 /* No side effect */

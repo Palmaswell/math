@@ -28,4 +28,13 @@ describe("number sign proof function", (function () {
                     }));
       }));
 
+describe("radians to degrees", (function () {
+        Jest.test("150 radians", (function (param) {
+                return Jest.Expect[/* toEqual */12](8594.366926962348, Jest.Expect[/* expect */0](Math$LinearAlgebraRe.rad_to_deg(150.00)));
+              }));
+        return Jest.test("-45 radias", (function (param) {
+                      return Jest.Expect[/* toEqual */12](-2291.831180523293, Jest.Expect[/* expect */0](Math$LinearAlgebraRe.rad_to_deg(-40.00)));
+                    }));
+      }));
+
 /*  Not a pure module */

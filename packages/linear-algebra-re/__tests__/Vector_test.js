@@ -182,7 +182,7 @@ describe("magnitude", (function () {
       }));
 
 describe("Dot Product", (function () {
-        Jest.test("test direction vector", (function (param) {
+        Jest.test("two entries vector", (function (param) {
                 return Jest.Expect[/* toEqual */12](-41.382286, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.dot_product(undefined, /* :: */[
                                     7.887,
                                     /* :: */[
@@ -197,7 +197,7 @@ describe("Dot Product", (function () {
                                     ]
                                   ])));
               }));
-        return Jest.test("test direction vector", (function (param) {
+        return Jest.test("three entries vector", (function (param) {
                       return Jest.Expect[/* toEqual */12](56.39717800000001, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.dot_product(undefined, /* :: */[
                                           -5.955,
                                           /* :: */[
@@ -213,6 +213,45 @@ describe("Dot Product", (function () {
                                             -8.755,
                                             /* :: */[
                                               7.103,
+                                              /* [] */0
+                                            ]
+                                          ]
+                                        ])));
+                    }));
+      }));
+
+describe("Angle between two vectors", (function () {
+        Jest.test("radian angle", (function (param) {
+                return Jest.Expect[/* toEqual */12](3.0720263098372476, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.angle(/* Radians */0, /* :: */[
+                                    3.183,
+                                    /* :: */[
+                                      -7.627,
+                                      /* [] */0
+                                    ]
+                                  ], /* :: */[
+                                    -2.668,
+                                    /* :: */[
+                                      5.319,
+                                      /* [] */0
+                                    ]
+                                  ])));
+              }));
+        return Jest.test("degree angle", (function (param) {
+                      return Jest.Expect[/* toEqual */12](60.27581120523091, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.angle(/* Degrees */1, /* :: */[
+                                          7.35,
+                                          /* :: */[
+                                            0.221,
+                                            /* :: */[
+                                              5.188,
+                                              /* [] */0
+                                            ]
+                                          ]
+                                        ], /* :: */[
+                                          2.751,
+                                          /* :: */[
+                                            8.259,
+                                            /* :: */[
+                                              3.985,
                                               /* [] */0
                                             ]
                                           ]

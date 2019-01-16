@@ -31,6 +31,15 @@ describe("magnitude", () => {
 }); */
 
 describe("Dot Product", () => {
-  test("test direction vector", () => expect(dot_product([7.887, 4.138], [-8.802, 6.776])) |> toEqual(-41.382286))
-  test("test direction vector", () => expect(dot_product([-5.955, -4.904, -1.874], [-4.496, -8.755, 7.103])) |> toEqual(56.39717800000001))
+  test("two entries vector", () =>
+    expect(
+      dot_product([7.887, 4.138], [-8.802, 6.776])
+    ) |> toEqual(-41.382286)
+  )
+  test("three entries vector", () => expect(dot_product([-5.955, -4.904, -1.874], [-4.496, -8.755, 7.103])) |> toEqual(56.39717800000001))
+});
+
+describe("Angle between two vectors", () => {
+  test("radian angle", () => expect(angle(Radians, [3.183, -7.627], [-2.668, 5.319])) |> toEqual(3.0720263098372476))
+  test("degree angle", () => expect(angle(Degrees, [7.35, 0.221, 5.188], [2.751, 8.259, 3.985])) |> toEqual(60.27581120523091))
 });

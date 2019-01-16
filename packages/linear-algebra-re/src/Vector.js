@@ -2,6 +2,7 @@
 'use strict';
 
 var List = require("bs-platform/lib/js/list.js");
+var Math$LinearAlgebraRe = require("./Math.js");
 var Root$LinearAlgebraRe = require("./Root.js");
 
 function add($staropt$star, v1, v2) {
@@ -71,10 +72,19 @@ function dot_product($staropt$star, v1, v2) {
   }
 }
 
+function angle(angleType, v1, v2) {
+  if (angleType) {
+    return Math$LinearAlgebraRe.rad_to_deg(Math.acos(dot_product(undefined, v1, v2) / (magnitude(v1) * magnitude(v2))));
+  } else {
+    return Math.acos(dot_product(undefined, v1, v2) / (magnitude(v1) * magnitude(v2)));
+  }
+}
+
 exports.add = add;
 exports.substract = substract;
 exports.scale = scale;
 exports.magnitude = magnitude;
 exports.direction = direction;
 exports.dot_product = dot_product;
+exports.angle = angle;
 /* No side effect */
