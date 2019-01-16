@@ -1,3 +1,4 @@
+import * as Utils from './utils';
 // (number[], number[]) => number[]
 export const add = (v1: number[], v2: number[]): number[] => (
   v1.map((coord: number, i: number) => coord + v2[i])
@@ -63,7 +64,13 @@ export const dotProduct = (v: number[], w: number[]): number => {
  * both vectors.
  * arccos(v * w / ||v|| * ||w||)
  */
-export const angle = (v: number[], w: number[], inDegrees = false): number => {
+
+ export enum Unit {
+  radians = 'radians',
+  degrees = 'degrees'
+ }
+
+export const angle = (v: number[], w: number[], unit?: Unit ): number => {
   if (v.length !== w.length) {
     console.log(`
     > Vector angle operation can only be executed on vectors of the same size. ⚠️
@@ -71,6 +78,12 @@ export const angle = (v: number[], w: number[], inDegrees = false): number => {
     return;
   }
 
-  return Math.acos(dotProduct(v, w) / (magnitude(v) * magnitude(w)));
+  switch (unit) {
+    case 'degrees':
+      return Utils.radToDeg(Math.acos(dotProduct(v, w) / (magnitude(v) * magnitude(w))));
+    case 'radians':
+    default:
+      return Math.acos(dotProduct(v, w) / (magnitude(v) * magnitude(w)));
+  }
 }
 
