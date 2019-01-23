@@ -87,3 +87,15 @@ export const angle = (v: number[], w: number[], unit?: Unit ): number => {
   }
 }
 
+/**
+ * @name isOrthogonal
+ * @type { boolean }
+ * @description Two vectors are orthogonal if their dot product is 0
+ * (A 90 degree angle between two vectors)
+ * The 0 vector is parallel and orthogonal to all vectors.
+ * The 0 vector is the only vector that is orthogonal to itself.
+ * w * v = 0
+*/
+export function isOrthogonal(v1: number[], v2:number[]): boolean {
+  return Math.abs(dotProduct(v1, v2)) < 1e-8 ? true : false;
+}

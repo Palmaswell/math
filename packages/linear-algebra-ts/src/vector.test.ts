@@ -36,3 +36,9 @@ test('Vector angle', () => {
   expect(Vector.angle([7.35, 0.221, 5.188], [2.751, 8.259, 3.985], Vector.Unit.degrees)).toEqual(60.27581120523091);
 });
 
+test('Check if two vectors are orthogonal to each other', () => {
+  expect(Vector.isOrthogonal([-7.579, -7.88], [22.737, 23.64])).toEqual(false);
+  expect(Vector.isOrthogonal([-2.029, 9.97, 4.172], [-9.231, -6.639, -7.245])).toEqual(false);
+  expect(Vector.isOrthogonal([-2.328, -7.284, -1.214], [-1.821, 1.072, -2.94])).toEqual(true);
+  expect(Vector.isOrthogonal([2.118, 4.827], [0, 0])).toEqual(true);
+})
