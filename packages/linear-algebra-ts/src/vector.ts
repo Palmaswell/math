@@ -45,7 +45,7 @@ export const direction = (v: number[]): number[] => v.map(entry =>  +(1 / magnit
  * and add those products together.
  * v * w  = v1 w1 + v2 w2 + v3 w3 + .... + vn wn
  */
-export const dotProduct = (v: number[], w: number[]): number => {
+export function dotProduct(v: number[], w: number[]): number {
   if (v.length !== w.length) {
     console.log(`
     > Dot Product operation can only be executed on vectors of the same size. ⚠️
@@ -70,7 +70,7 @@ export const dotProduct = (v: number[], w: number[]): number => {
   degrees = 'degrees'
  }
 
-export const angle = (v: number[], w: number[], unit?: Unit ): number => {
+export function angle(v: number[], w: number[], unit?: Unit ): number {
   if (v.length !== w.length) {
     console.log(`
     > Vector angle operation can only be executed on vectors of the same size. ⚠️
