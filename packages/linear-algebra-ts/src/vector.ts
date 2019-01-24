@@ -1,15 +1,33 @@
 import * as Utils from './utils';
-// (number[], number[]) => number[]
+/**
+ * @name add
+ * @type { array }
+ * @description two vectors of the same length can be added together
+ * by adding the corresponding entries to form another vector of
+ * the same size.
+ */
 export const add = (v1: number[], v2: number[]): number[] => (
   v1.map((coord: number, i: number) => coord + v2[i])
 );
 
-// (number[], number[]) => number[]
+/**
+ * @name substract
+ * @type { array }
+ * @description two vectors of the same length can be substracted together
+ * by adding the corresponding entries to form another vector of
+ * the same size.
+ */
 export const substract = (v1: number[], v2: number[]): number[] => (
   v1.map((coord: number, i: number) => coord - v2[i])
 );
 
-// (number[], number[]) => number[]
+/**
+ * @name scalar
+ * @type { array }
+ * @description scalar multiplication or scalar vector multiplication,
+ * is an operation in which a vector is multiplied by a scalar(number),
+ * which is done by multiplying every entry of the vector by the scalar
+ */
 export const scalar = (n: number, v1: number[]) => v1.map((coord: number) => coord * n)
 
 /**
@@ -20,7 +38,7 @@ export const scalar = (n: number, v1: number[]) => v1.map((coord: number) => coo
  * or the distance between the two points it connects.
  * ||v|| = √(entry1)² + (entry2)² + ... + (entryN)²
  */
-export const magnitude = (v: number[]) => (
+export const magnitude = (v: number[]): number => (
   Math.sqrt(v.map((coord: number) => Math.pow(coord, 2))
   .reduce((acc: number, curr: number) => acc + curr))
 );
