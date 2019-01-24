@@ -1,4 +1,9 @@
 import * as Utils from './utils';
+export enum Unit {
+  radians = 'radians',
+  degrees = 'degrees'
+ }
+
 /**
  * @name add
  * @type { array }
@@ -6,9 +11,9 @@ import * as Utils from './utils';
  * by adding the corresponding entries to form another vector of
  * the same size.
  */
-export const add = (v1: number[], v2: number[]): number[] => (
-  v1.map((coord: number, i: number) => coord + v2[i])
-);
+export function add(v1: number[], v2: number[]): number[] {
+  return v1.map((entry: number, i: number) => entry + v2[i])
+};
 
 /**
  * @name substract
@@ -17,9 +22,9 @@ export const add = (v1: number[], v2: number[]): number[] => (
  * by adding the corresponding entries to form another vector of
  * the same size.
  */
-export const substract = (v1: number[], v2: number[]): number[] => (
-  v1.map((coord: number, i: number) => coord - v2[i])
-);
+export function substract(v1: number[], v2: number[]): number[] {
+  return v1.map((entry: number, i: number) => entry - v2[i])
+};
 
 /**
  * @name scalar
@@ -28,7 +33,9 @@ export const substract = (v1: number[], v2: number[]): number[] => (
  * is an operation in which a vector is multiplied by a scalar(number),
  * which is done by multiplying every entry of the vector by the scalar
  */
-export const scalar = (n: number, v1: number[]) => v1.map((coord: number) => coord * n)
+export function scalar(n: number, v1: number[]) {
+  return v1.map((entry: number) => entry * n)
+}
 
 /**
  *
@@ -38,10 +45,10 @@ export const scalar = (n: number, v1: number[]) => v1.map((coord: number) => coo
  * or the distance between the two points it connects.
  * ||v|| = √(entry1)² + (entry2)² + ... + (entryN)²
  */
-export const magnitude = (v: number[]): number => (
-  Math.sqrt(v.map((coord: number) => Math.pow(coord, 2))
+export function magnitude(v: number[]): number {
+  return Math.sqrt(v.map((entry: number) => Math.pow(entry, 2))
   .reduce((acc: number, curr: number) => acc + curr))
-);
+};
 
 /**
  *
@@ -51,7 +58,10 @@ export const magnitude = (v: number[]): number => (
  * A unit vector is a vector whose magnitude is 1
  * 1 / ||v|| * v = u
  */
-export const direction = (v: number[]): number[] => v.map(entry =>  +(1 / magnitude(v) * entry).toFixed(3));
+export function direction(v: number[]): number[]  {
+  return v.map(entry =>  +(1 / magnitude(v) * entry).toFixed(3))
+
+};
 
 /**
  *
@@ -66,7 +76,7 @@ export const direction = (v: number[]): number[] => v.map(entry =>  +(1 / magnit
 export function dotProduct(v: number[], w: number[]): number {
   if (v.length !== w.length) {
     console.log(`
-    > Dot Product operation can only be executed on vectors of the same size. ⚠️
+    > Dot Product operation can only be executed on vectors of the same length. ⚠️
     `);
     return;
   }
@@ -82,12 +92,6 @@ export function dotProduct(v: number[], w: number[]): number {
  * both vectors.
  * arccos(v * w / ||v|| * ||w||)
  */
-
- export enum Unit {
-  radians = 'radians',
-  degrees = 'degrees'
- }
-
 export function angle(v: number[], w: number[], unit?: Unit ): number {
   if (v.length !== w.length) {
     console.log(`
