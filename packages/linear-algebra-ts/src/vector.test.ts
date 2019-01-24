@@ -41,4 +41,20 @@ test('Check if two vectors are orthogonal to each other', () => {
   expect(Vector.isOrthogonal([-2.029, 9.97, 4.172], [-9.231, -6.639, -7.245])).toEqual(false);
   expect(Vector.isOrthogonal([-2.328, -7.284, -1.214], [-1.821, 1.072, -2.94])).toEqual(true);
   expect(Vector.isOrthogonal([2.118, 4.827], [0, 0])).toEqual(true);
+});
+
+test('Check if a vector is a zero vector', () => {
+  expect(Vector.isZero([-7.579, -7.88])).toEqual(false);
+  expect(Vector.isZero([-2.029, 9.97, 4.172])).toEqual(false);
+  expect(Vector.isZero([-2.328, -7.284, -1.214])).toEqual(false);
+  expect(Vector.isZero([0, 0])).toEqual(true);
 })
+
+// test('Check if two vectors are parallel to each other', () => {
+//   expect(Vector.isParallel([-7.579, -7.88], [22.737, 23.64])).toEqual(true);
+//   expect(Vector.isParallel([-2.029, 9.97, 4.172], [-9.231, -6.639, -7.245])).toEqual(false);
+//   expect(Vector.isParallel([-2.328, -7.284, -1.214], [-1.821, 1.072, -2.94])).toEqual(false);
+//   expect(Vector.isParallel([2.118, 4.827], [0, 0])).toEqual(false);
+// })
+
+

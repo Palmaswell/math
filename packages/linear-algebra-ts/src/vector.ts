@@ -99,3 +99,27 @@ export function angle(v: number[], w: number[], unit?: Unit ): number {
 export function isOrthogonal(v1: number[], v2:number[]): boolean {
   return Math.abs(dotProduct(v1, v2)) < 1e-8 ? true : false;
 }
+
+/**
+ * @name isZero
+ * @type { boolean }
+ * @description A zero vector is a vector that all
+ * elements equal to zero. The zero vector has a length of 0
+ *
+*/
+export function isZero(v: number[]): boolean {
+  return magnitude(v) < 1e-10 ? true : false;
+}
+
+/**
+ * @name isParallel
+ * @type { boolean }
+ * @description Two vectors are parallel if one is a
+ * scalar multiple of the other.
+ * Consider two vector to be parallel even if they point
+ * in opposite directions.
+ *
+*/
+// export function isParallel(v: number[]): boolean {
+
+// }
