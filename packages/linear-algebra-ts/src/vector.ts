@@ -120,6 +120,9 @@ export function isZero(v: number[]): boolean {
  * in opposite directions.
  *
 */
-// export function isParallel(v: number[]): boolean {
-
-// }
+export function isParallel(v1: number[], v2: number[]): boolean {
+  return isZero(v1)
+    || isZero(v2)
+    || angle(v1, v2, Unit.degrees) === 0
+    || angle(v1, v2, Unit.degrees) === Utils.radToDeg(Math.PI);
+}
