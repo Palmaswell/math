@@ -1,24 +1,45 @@
 open Math;
 open Root;
-/* add: (list(float),  list(float)) => list(float) */
+type angleUnit =
+  | Radians
+  | Degrees;
+/**
+ * @name add
+ * @type { array }
+ * @description two vectors of the same length can be added together
+ * by adding the corresponding entries to form another vector of
+ * the same size.
+ */
 let rec add = (~i=0, v1, v2) =>
     switch v1 {
     | [] => []
     | [h, ...t] => [h +. List.nth(v2, i), ...add(~i=i + 1, t, v2)]
     };
 
-/* substract: (list(float), list(float) => list(float) ) */
+/**
+ * @name substract
+ * @type { array }
+ * @description two vectors of the same length can be substracted together
+ * by adding the corresponding entries to form another vector of
+ * the same size.
+ */
 let rec substract = (~i=0, v1, v2) =>
     switch v1 {
     | [] => []
     | [h, ...t] => [h -. List.nth(v2, i), ...substract(~i = i + 1, t, v2)]
     };
 
-/* scale: (float, list(float)) => list(float) */
-let rec scale = (n, v) =>
+/**
+ * @name scalar
+ * @type { array }
+ * @description scalar multiplication or scalar vector multiplication,
+ * is an operation in which a vector is multiplied by a scalar(number),
+ * which is done by multiplying every entry of the vector by the scalar
+ */
+let rec scalar = (n, v) =>
   switch v {
   | [] => []
-  | [h, ...t] => [h *. n, ...scale(n, t)]
+  | [h, ...t] => [h *. n, ...scalar(n, t)]
   };
 
 /**
@@ -79,12 +100,9 @@ let rec dot_product = (~i=0, v1, v2) =>
  * both vectors.
  * arccos(v * w / ||v|| * ||w||)
  */
-type angleType =
-  | Radians
-  | Degrees;
 
-let angle = (angleType, v1, v2) =>
-  switch angleType {
+let angle = (angleUnit, v1, v2) =>
+  switch angleUnit {
   | Radians => acos(dot_product(v1, v2) /. (magnitude(v1) *. magnitude(v2)))
   | Degrees => rad_to_deg(acos(dot_product(v1, v2) /. (magnitude(v1) *. magnitude(v2))))
   };
@@ -109,3 +127,18 @@ let is_orthogonal = (v1, v2) => float_abs(dot_product(v1, v2)) < 1e-10;
  *
 */
 let is_zero = v1 => magnitude(v1) < 1e-10;
+
+/**
+ * @name is_parallel
+ * @type { boolean }
+ * @description Two vectors are parallel if one is a
+ * scalar multiple of the other.
+ * Consider two vector to be parallel even if they point
+ * in opposite directions.
+ *
+*/
+[@bs.val] external pi : float = "Math.PI";
+let is_parallel = (v1, v2) => is_zero(v1)
+  || is_zero(v2)
+  || angle(Degrees, v1, v2) == 0.00
+  || angle(Degrees, v1, v2) == rad_to_deg(pi);

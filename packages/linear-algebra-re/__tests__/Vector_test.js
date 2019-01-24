@@ -123,7 +123,7 @@ describe("scale", (function () {
                                       /* [] */0
                                     ]
                                   ]
-                                ], Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.scale(7.41, /* :: */[
+                                ], Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.scalar(7.41, /* :: */[
                                           1.671,
                                           /* :: */[
                                             -1.012,
@@ -370,6 +370,81 @@ describe("Check if a vector is a zero vector", (function () {
               }));
         return Jest.test("[-2.328, -7.284, -1.214]", (function (param) {
                       return Jest.Expect[/* toEqual */12](true, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.is_zero(/* :: */[
+                                          0.00,
+                                          /* :: */[
+                                            0.00,
+                                            /* [] */0
+                                          ]
+                                        ])));
+                    }));
+      }));
+
+describe("Check if two vectors are parallel to each other", (function () {
+        Jest.test("[-7.579, -7.88], [22.737, 23.64]", (function (param) {
+                return Jest.Expect[/* toEqual */12](true, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.is_parallel(/* :: */[
+                                    -7.579,
+                                    /* :: */[
+                                      -7.88,
+                                      /* [] */0
+                                    ]
+                                  ], /* :: */[
+                                    22.737,
+                                    /* :: */[
+                                      23.64,
+                                      /* [] */0
+                                    ]
+                                  ])));
+              }));
+        Jest.test("[-2.029, 9.97, 4.172], [-9.231, -6.639, -7.245]", (function (param) {
+                return Jest.Expect[/* toEqual */12](false, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.is_parallel(/* :: */[
+                                    -2.029,
+                                    /* :: */[
+                                      9.97,
+                                      /* :: */[
+                                        4.172,
+                                        /* [] */0
+                                      ]
+                                    ]
+                                  ], /* :: */[
+                                    -9.231,
+                                    /* :: */[
+                                      -6.639,
+                                      /* :: */[
+                                        -7.245,
+                                        /* [] */0
+                                      ]
+                                    ]
+                                  ])));
+              }));
+        Jest.test("[-2.328, -7.284, -1.214], [-1.821, 1.072, -2.94]", (function (param) {
+                return Jest.Expect[/* toEqual */12](false, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.is_parallel(/* :: */[
+                                    -2.328,
+                                    /* :: */[
+                                      -7.284,
+                                      /* :: */[
+                                        -1.214,
+                                        /* [] */0
+                                      ]
+                                    ]
+                                  ], /* :: */[
+                                    -1.821,
+                                    /* :: */[
+                                      1.072,
+                                      /* :: */[
+                                        -2.94,
+                                        /* [] */0
+                                      ]
+                                    ]
+                                  ])));
+              }));
+        return Jest.test("[2.118, 4.827], [0.00, 0.00]", (function (param) {
+                      return Jest.Expect[/* toEqual */12](true, Jest.Expect[/* expect */0](Vector$LinearAlgebraRe.is_parallel(/* :: */[
+                                          2.118,
+                                          /* :: */[
+                                            4.827,
+                                            /* [] */0
+                                          ]
+                                        ], /* :: */[
                                           0.00,
                                           /* :: */[
                                             0.00,

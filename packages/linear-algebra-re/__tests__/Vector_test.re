@@ -15,7 +15,7 @@ describe("substract", () => {
 });
 
 describe("scale", () => {
-  test("floats", () => expect(scale(7.41, [1.671, -1.012, -0.318])) |> toEqual([12.38211, -7.49892, -2.35638]));
+  test("floats", () => expect(scalar(7.41, [1.671, -1.012, -0.318])) |> toEqual([12.38211, -7.49892, -2.35638]));
 });
 
 describe("magnitude", () => {
@@ -56,4 +56,11 @@ describe("Check if a vector is a zero vector", () => {
   test("[-2.029, 9.97, 4.172]", () => expect(is_zero([-2.029, 9.97, 4.172])) |> toEqual(false))
   test("[-2.328, -7.284, -1.214]", () => expect(is_zero([-2.328, -7.284, -1.214])) |> toEqual(false))
   test("[-2.328, -7.284, -1.214]", () => expect(is_zero([0.00, 0.00])) |> toEqual(true))
+});
+
+describe("Check if two vectors are parallel to each other", () => {
+  test("[-7.579, -7.88], [22.737, 23.64]", () => expect(is_parallel([-7.579, -7.88], [22.737, 23.64])) |> toEqual(true))
+  test("[-2.029, 9.97, 4.172], [-9.231, -6.639, -7.245]", () => expect(is_parallel([-2.029, 9.97, 4.172], [-9.231, -6.639, -7.245])) |> toEqual(false))
+  test("[-2.328, -7.284, -1.214], [-1.821, 1.072, -2.94]", () => expect(is_parallel([-2.328, -7.284, -1.214], [-1.821, 1.072, -2.94])) |> toEqual(false))
+  test("[2.118, 4.827], [0.00, 0.00]", () => expect(is_parallel([2.118, 4.827], [0.00, 0.00])) |> toEqual(true))
 });

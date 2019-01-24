@@ -29,11 +29,11 @@ function substract($staropt$star, v1, v2) {
   }
 }
 
-function scale(n, v) {
+function scalar(n, v) {
   if (v) {
     return /* :: */[
             v[0] * n,
-            scale(n, v[1])
+            scalar(n, v[1])
           ];
   } else {
     return /* [] */0;
@@ -72,8 +72,8 @@ function dot_product($staropt$star, v1, v2) {
   }
 }
 
-function angle(angleType, v1, v2) {
-  if (angleType) {
+function angle(angleUnit, v1, v2) {
+  if (angleUnit) {
     return Math$LinearAlgebraRe.rad_to_deg(Math.acos(dot_product(undefined, v1, v2) / (magnitude(v1) * magnitude(v2))));
   } else {
     return Math.acos(dot_product(undefined, v1, v2) / (magnitude(v1) * magnitude(v2)));
@@ -88,13 +88,22 @@ function is_zero(v1) {
   return magnitude(v1) < 1e-10;
 }
 
+function is_parallel(v1, v2) {
+  if (magnitude(v1) < 1e-10 || magnitude(v2) < 1e-10 || angle(/* Degrees */1, v1, v2) === 0.00) {
+    return true;
+  } else {
+    return angle(/* Degrees */1, v1, v2) === Math$LinearAlgebraRe.rad_to_deg(Math.PI);
+  }
+}
+
 exports.add = add;
 exports.substract = substract;
-exports.scale = scale;
+exports.scalar = scalar;
 exports.magnitude = magnitude;
 exports.direction = direction;
 exports.dot_product = dot_product;
 exports.angle = angle;
 exports.is_orthogonal = is_orthogonal;
 exports.is_zero = is_zero;
+exports.is_parallel = is_parallel;
 /* No side effect */
