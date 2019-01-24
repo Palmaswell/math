@@ -80,6 +80,14 @@ function angle(angleType, v1, v2) {
   }
 }
 
+function is_orthogonal(v1, v2) {
+  return Math$LinearAlgebraRe.float_abs(dot_product(undefined, v1, v2)) < 1e-10;
+}
+
+function is_zero(v1) {
+  return magnitude(v1) < 1e-10;
+}
+
 exports.add = add;
 exports.substract = substract;
 exports.scale = scale;
@@ -87,4 +95,6 @@ exports.magnitude = magnitude;
 exports.direction = direction;
 exports.dot_product = dot_product;
 exports.angle = angle;
+exports.is_orthogonal = is_orthogonal;
+exports.is_zero = is_zero;
 /* No side effect */

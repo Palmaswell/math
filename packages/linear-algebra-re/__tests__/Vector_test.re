@@ -43,3 +43,17 @@ describe("Angle between two vectors", () => {
   test("radian angle", () => expect(angle(Radians, [3.183, -7.627], [-2.668, 5.319])) |> toEqual(3.0720263098372476))
   test("degree angle", () => expect(angle(Degrees, [7.35, 0.221, 5.188], [2.751, 8.259, 3.985])) |> toEqual(60.27581120523091))
 });
+
+describe("Check if two vectors are orthogonal to each other", () => {
+  test("[-7.579, -7.88], [22.737, 23.64]", () => expect(is_orthogonal([-7.579, -7.88], [22.737, 23.64])) |> toEqual(false))
+  test("[-2.029, 9.97, 4.172], [-9.231, -6.639, -7.245]", () => expect(is_orthogonal([-2.029, 9.97, 4.172], [-9.231, -6.639, -7.245])) |> toEqual(false))
+  test("[-2.328, -7.284, -1.214], [-1.821, 1.072, -2.94]", () => expect(is_orthogonal([-2.328, -7.284, -1.214], [-1.821, 1.072, -2.94])) |> toEqual(true))
+  test("[2.118, 4.827], [0.00, 0.00]", () => expect(is_orthogonal([2.118, 4.827], [0.00, 0.00])) |> toEqual(true))
+});
+
+describe("Check if a vector is a zero vector", () => {
+  test("[-7.579, -7.88]", () => expect(is_zero([-7.579, -7.88])) |> toEqual(false))
+  test("[-2.029, 9.97, 4.172]", () => expect(is_zero([-2.029, 9.97, 4.172])) |> toEqual(false))
+  test("[-2.328, -7.284, -1.214]", () => expect(is_zero([-2.328, -7.284, -1.214])) |> toEqual(false))
+  test("[-2.328, -7.284, -1.214]", () => expect(is_zero([0.00, 0.00])) |> toEqual(true))
+});

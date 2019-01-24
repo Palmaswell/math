@@ -89,5 +89,23 @@ let angle = (angleType, v1, v2) =>
   | Degrees => rad_to_deg(acos(dot_product(v1, v2) /. (magnitude(v1) *. magnitude(v2))))
   };
 
+/**
+ * @name is_orthogonal
+ * @type { boolean }
+ * @description Two vectors are orthogonal if their dot product is 0
+ * (A 90 degree angle between two vectors)
+ * The 0 vector is parallel and orthogonal to all vectors.
+ * The 0 vector is the only vector that is orthogonal to itself.
+ * w * v = 0
+*/
 
+let is_orthogonal = (v1, v2) => float_abs(dot_product(v1, v2)) < 1e-10;
 
+/**
+ * @name is_zero
+ * @type { boolean }
+ * @description A zero vector is a vector that all
+ * elements equal to zero. The zero vector has a length of 0
+ *
+*/
+let is_zero = v1 => magnitude(v1) < 1e-10;
