@@ -1,3 +1,4 @@
 
 (executable
-  (name index))
+  (name index)
+  (libraries lib))
