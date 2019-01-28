@@ -1,0 +1,7 @@
+_build
+_opam
+*.log
+.yarn-metadata.json
+.DS_Store
+.merlin
+src/*bs.js
