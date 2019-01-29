@@ -1,4 +1,4 @@
-open Lib
+open Linear_algebra_ml
 
 
 let () =

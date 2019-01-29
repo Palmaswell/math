@@ -1,0 +1,7 @@
+lib: [
+  "_build/install/default/lib/linear-algebra-ml/META" {"META"}
+  "_build/install/default/lib/linear-algebra-ml/opam" {"opam"}
+]
+doc: [
+  "_build/install/default/doc/linear-algebra-ml/README.md"
+]

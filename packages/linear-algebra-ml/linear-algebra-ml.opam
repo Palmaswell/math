@@ -6,10 +6,8 @@ version: "1.0.0"
 authors: "Mauricio Palma <mauricio.palma@woodlikeocean.com>"
 maintainer: "Mauricio Palma <mauricio.palma@woodlikeocean.com>"
 license: "MIT"
-
+build: ["dune" "build" "-p" name]
 depends: [
-  "dune" {build}
+  "ounit"
   "lwt"
-  "utop"
-  "merlin"
 ]
